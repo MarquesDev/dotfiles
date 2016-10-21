@@ -1,0 +1,23 @@
+snippet rc "React Class Component" 
+class $1 extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <div>
+     
+      </div>
+    );
+  }
+}
+endsnippet
+
+snippet dc "React Element With Class"
+<$1 className={Style.$2}>
+  $3
+<$1>
+endsnippet

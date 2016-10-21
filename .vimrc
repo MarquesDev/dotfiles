@@ -23,17 +23,20 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/syntastic'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
-Plugin 'majutsushi/tagbar'
+"Plugin 'xolox/vim-misc'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/a.vim'
+Plugin 'SirVer/ultisnips'
 
 " ----- Javascript setting ---------------------------------------------
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'marijnh/tern_for_vim'
+Plugin 'heavenshell/vim-jsdoc'
+
+" ----- HTML ----------------------------------------------------------
+Plugin 'mattn/emmet-vim'
 
 " ----- Working with Git ----------------------------------------------
 Plugin 'airblade/vim-gitgutter'
@@ -49,7 +52,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 " ----- Syntax plugins ------------------------------------------------
 Plugin 'jez/vim-c0'
 Plugin 'jez/vim-ispc'
-Plugin 'kchmck/vim-coffee-script'
+"Plugin 'kchmck/vim-coffee-script'
 Plugin 'mxw/vim-jsx'
 " ---- Extras/Advanced plugins ----------------------------------------
 " Highlight and strip trailing whitespace
@@ -83,12 +86,21 @@ set hlsearch
 syntax on
 set cursorline
 set mouse=a
+set relativenumber
 
-
+" ----- Custom Keywords -----------------------------------------
 " ----- Plugin-Specific Settings --------------------------------------
+
+" ---- UtilSnips Settings ----
+let g:UltiSnipsExpandTrigger="<C-D>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " ----- JSX Setting -----
 let g:jsx_ext_required = 0
+
+" ---- Javascript Setting ----
+let g:javascript_plugin_jsdoc = 1
 
 " ----- Ctrlp Setting -------
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
@@ -177,4 +189,7 @@ augroup mydelimitMate
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
 
+" ------- Personal Custom Settings --------------------------------
 
+" --- CSS/Scss ---
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
