@@ -2,3 +2,4 @@
 wiki
 *.swp
 *.swo
+.DS_Store
